@@ -23,7 +23,7 @@ gem install bundler
 
 Clone the repo using
 ```
-git clone https://github.com/cse3901-2018au-1730/The330WebScraping
+git clone https://github.com/HPainhas/WebScraping
 ```
 
 ### Execution
