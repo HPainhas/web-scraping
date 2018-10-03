@@ -16,12 +16,13 @@ def articles_percentage (articles)
   
   	articles.each do |article|
   		# if article includes "Ohio State" in its title, add one to osu_count
-        if article.title.to_s.include? str1
+        	if article.title.to_s.include? str1
         	osu_count += 1
-        # if article includes "President Michael V. Drake" in its title, add one to president_count
-        elsif article.title.to_s.include? str2
+        	# if article includes "President Michael V. Drake" in its title, add one to president_count
+        	elsif article.title.to_s.include? str2
         	president_count += 1
         end
+		
         # add one to total number of articles in news.osu.edu
         article_total += 1
 	end
@@ -35,17 +36,19 @@ def articles_percentage (articles)
   	puts "\n#{president_percentage}% of articles have \"President Michael V. Drake\" in their title"
 end
 
+# find average title length of all articles posted in news.osu.edu
 def average_title_length
 	
 	word_count = 0
 	total_count = 0
 	
-	length_array = Array.new
-	
-	# get the word count of each title and store it in array of title lengths
-	article.each do |article|
-		article.title.scan(/[w-]+/).size
+	# get the word count of each title and stores it in total_count
+	article.title.each do |title|
+		word_count += title.scan(/[\w-]+/).size
+		total_count += 1
 	end
+	
+	average_word_length = (word_count/ total_count)
 		
 	puts "\nAverage title length: #{average_word_length} words"
 end
