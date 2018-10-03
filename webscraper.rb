@@ -37,7 +37,7 @@ def articles_percentage (articles)
 end
 
 # find average title length of all articles posted in news.osu.edu
-def average_title_length
+def average_title_length(articles)
 	
 	word_count = 0
 	total_count = 0
@@ -52,4 +52,11 @@ def average_title_length
 	average_word_length = (word_count/ total_count)
 		
 	puts "\nAverage title length: #{average_word_length} words"
+end
+
+# find longest title in news.osu.edu
+def longes_title(articles)
+	longest = articles.title.inject do |title1,title2|
+		title1.length > title2.length? title1 : title2
+	end
 end
