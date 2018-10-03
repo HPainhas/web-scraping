@@ -154,6 +154,7 @@ max_year = articles.max_by(&:date).date.year
 
 beginning_year, ending_year = user_prompt_year_range(articles, min_year, max_year)
 
+# Gets user's choice
 while((choice = user_prompt) != 0)
     case choice
     when 1        
