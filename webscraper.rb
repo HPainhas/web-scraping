@@ -42,12 +42,13 @@ def average_title_length
 	word_count = 0
 	total_count = 0
 	
-	# get the word count of each title and stores it in total_count
+	# get the word count of each title and stores it in word_count, also count number of titles
 	article.title.each do |title|
 		word_count += title.scan(/[\w-]+/).size
 		total_count += 1
 	end
 	
+	#calculates average word length
 	average_word_length = (word_count/ total_count)
 		
 	puts "\nAverage title length: #{average_word_length} words"
